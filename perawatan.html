@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Perawatan - Klinik Gigi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">Perawatan</div>
+  <div style="display: flex; height: 100vh;">
+    <div class="sidebar">
+      <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
+      <div class="avatar">X</div>
+      <button onclick="window.location.href='dashboard.html'">Daftar Pasien</button>
+      <button class="active">Perawatan</button>
+      <button onclick="window.location.href='pembayaran.html'">Pembayaran</button>
+    </div>
+    <div class="main" style="flex:1; padding:40px 32px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+      <h2>Daftar Jenis Perawatan</h2>
+      <table style="width:100%; border-collapse:collapse; margin-bottom:25px;">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Perawatan</th>
+            <th>Harga</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Scaling</td>
+            <td>Rp 250.000</td>
+            <td>Pembersihan karang gigi</td>
+            <td>
+              <button>Edit</button>
+              <button>Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Tambal Gigi</td>
+            <td>Rp 300.000</td>
+            <td>Perbaikan gigi berlubang</td>
+            <td>
+              <button>Edit</button>
+              <button>Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Cabut Gigi</td>
+            <td>Rp 200.000</td>
+            <td>Pencabutan gigi yang rusak</td>
+            <td>
+              <button>Edit</button>
+              <button>Hapus</button>
+            </td>
+          </tr>
+          <!-- Tambahkan data lain sesuai kebutuhan -->
+        </tbody>
+      </table>
+      <button class="add-btn" style="margin-top:16px;">Tambah Perawatan</button>
+    </div>
+  </div>
+</body>
+</html>

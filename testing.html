@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftar Pengguna</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Daftar Pengguna</h2>
+
+<table id="penggunaTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data akan diisi via JS -->
+    </tbody>
+</table>
+
+<script>
+// AJAX Native JS
+function loadPengguna() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'get_pengguna.php', true);
+    xhr.onload = function() {
+        if (this.status === 200) {
+            var data = JSON.parse(this.responseText);
+            var tbody = document.querySelector('#penggunaTable tbody');
+            tbody.innerHTML = ""; // Clear existing data
+
+            data.forEach(function(pengguna) {
+                var row = document.createElement('tr');
+
+                var tdId = document.createElement('td');
+                tdId.textContent = pengguna.id;
+                row.appendChild(tdId);
+
+                var tdNama = document.createElement('td');
+                tdNama.textContent = pengguna.nama;
+                row.appendChild(tdNama);
+
+                var tdEmail = document.createElement('td');
+                tdEmail.textContent = pengguna.email;
+                row.appendChild(tdEmail);
+
+                tbody.appendChild(row);
+            });
+        } else {
+            console.error("Gagal memuat data.");
+        }
+    };
+    xhr.send();
+}
+
+// Load data saat page load
+window.onload = loadPengguna;
+</script>
+
+</body>
+</html>

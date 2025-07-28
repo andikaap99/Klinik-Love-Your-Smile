@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h1><span class="hi">Hi</span><br><span class="welcome">Welcome<br>Baack!</span></h1>
+      <form onsubmit="login(event)">
+        <label for="username">username</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password"><br>
+        <button type="submit">Login</button>
+      </form>
+      <button onclick="showRegister()">Buat Akun</button>
+      <div id="registerModal" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); background:#fff; padding:20px; border:1px solid #ccc; z-index:100;">
+        <h2>Buat Akun Baru</h2>
+        <label for="newUsername">Username</label>
+        <input type="text" id="newUsername" class="input-grey"><br>
+        <label for="newPassword">Password</label>
+        <input type="password" id="newPassword" class="input-grey"><br>
+        <button onclick="register()">Daftar</button>
+        <button onclick="closeRegister()">Batal</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+  
+<script>
+  function showRegister() {
+    document.getElementById('registerModal').style.display = 'block';
+  }
+  function closeRegister() {
+    document.getElementById('registerModal').style.display = 'none';
+  }
+  function register() {
+    const newUsername = document.getElementById('newUsername').value.trim();
+    const newPassword = document.getElementById('newPassword').value.trim();
+    if (newUsername && newPassword) {
+      alert('Akun berhasil dibuat!\nUsername: ' + newUsername);
+      closeRegister();
+      // Untuk demo, akun baru tidak disimpan. Untuk aplikasi nyata, simpan ke database.
+    } else {
+      alert('Username dan password harus diisi!');
+    }
+  }
+  function register() {
+    const newUsername = document.getElementById('newUsername').value.trim();
+    const newPassword = document.getElementById('newPassword').value.trim();
+    if (newUsername && newPassword) {
+      fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: newUsername, password: newPassword })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Akun berhasil dibuat!');
+          closeRegister();
+        } else {
+          alert('Gagal membuat akun: ' + data.message);
+        }
+      })
+      .catch(err => alert('Error: ' + err));
+    } else {
+      alert('Username dan password harus diisi!');
+    }
+  }
+
+  function login(event) {
+    event.preventDefault(); // Biar ga reload halaman
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Contoh akun dummy
+    const validUsername = "admin";
+    const validPassword = "1234";
+
+    if (username === validUsername && password === validPassword) {
+      alert("Login berhasil! 🚀");
+      // bisa redirect ke halaman lain kalo mau
+         window.location.href = "dashboard.html";
+    } else {
+      alert("Login gagal. Username atau password salah.");
+    }
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
