@@ -20,7 +20,7 @@ require __DIR__ . '/../../config.php';
         <button onclick="window.location.href='../../functions/logout.php'">Logout</button>
     </div>
   </nav>
-  <div style="display: flex; min-height: 100vh;">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
       <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>
@@ -48,7 +48,7 @@ require __DIR__ . '/../../config.php';
           </tbody>
         </table>
       </div>
-      <button class="add-btn" onclick="showAddModal()">Add Rekam</button>
+      <button class="add-btn" onclick="showAddModal()">Tambah Rekam</button>
       <div id="addModal" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); background:#fff; padding:24px; border:1px solid #ccc; z-index:100; border-radius:8px; min-width:320px;">
         <h3>Tambah Pemeriksaan</h3>
         <label>Id Pemeriksaan</label><br>
@@ -62,8 +62,8 @@ require __DIR__ . '/../../config.php';
         <label>Diagnosa</label><br>
         <input type="text" id="diagnosa" class="input-grey"><br>
 
-        <button onclick="nextToModal2()">Next</button>
-        <button onclick="closeAddModal()">Batal</button>
+        <button class="button-add" onclick="nextToModal2()">Next</button>
+        <button class="button-hapus" onclick="closeAddModal()">Batal</button>
       </div>
 
       <div id="addModal2" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); background:#fff; padding:24px; border:1px solid #ccc; z-index:100; border-radius:8px; min-width:320px;">
@@ -77,8 +77,8 @@ require __DIR__ . '/../../config.php';
           <option value="">-- Pilih Resep --</option>
         </select><br>
 
-        <button onclick="submitRekamMedis()">Simpan</button>
-        <button onclick="closeAddModal2()">Batal</button>
+        <button class="button-add" onclick="submitRekamMedis()">Simpan</button>
+        <button class="button-hapus" onclick="closeAddModal2()">Batal</button>
       </div>
 
       <div id="editRekamModal" style="display:none; position:fixed; top:30%; left:50%; transform:translate(-50%,-30%); background:#fff; padding:24px; border:1px solid #ccc; z-index:100; border-radius:8px; min-width:320px;">
@@ -93,8 +93,8 @@ require __DIR__ . '/../../config.php';
         <label>Diagnosa</label><br>
         <input type="text" id="editDiagnosa" class="input-grey"><br><br>
 
-        <button onclick="editRekamMedis()">Simpan</button>
-        <button onclick="closeEditModal()">Batal</button>
+        <button class="button-add" onclick="editRekamMedis()">Simpan</button>
+        <button class="button-hapus" onclick="closeEditModal()">Batal</button>
       </div>
 
     </div>

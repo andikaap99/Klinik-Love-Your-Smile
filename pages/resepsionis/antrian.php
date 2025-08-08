@@ -21,7 +21,7 @@ require __DIR__ . '/../../config.php';
     </div>
   </nav>
 
-  <div style="display: flex; height: 100vh">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br /><small>Love Your Smile</small></h3>
       <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>

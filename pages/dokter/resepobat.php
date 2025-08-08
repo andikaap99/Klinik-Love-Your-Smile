@@ -21,8 +21,7 @@ require __DIR__ . '/../../config.php';
         <button onclick="window.location.href='../../functions/logout.php'">Logout</button>
     </div>
   </nav>
-    <div style="display:flex;">
-      <div style="display: flex; min-height: 100vh;">
+      <div style="display: flex;">
         <div class="sidebar">
           <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
           <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>
@@ -30,9 +29,8 @@ require __DIR__ . '/../../config.php';
           <button onclick="window.location.href='rekammedis.php'">Rekam Medis</button>
           <button onclick="window.location.href='resepobat.php'">Resep Obat</button>
         </div>
-      </div>
       <div class="resep-layout" style="padding: 32px; flex:1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
-        <h2 class="judul" style="margin-bottom: 20px;">Daftar Rekam Medis</h2>
+        <h2 class="judul" style="margin-bottom: 20px;">Daftar Resep Obat</h2>
         <div class="resep-main">
           <form class="resep-form-panel" method="POST" action="../../functions/get_resep.php?action=simpan">
             <label for="dokterSelect" class="resep-label">Nama Dokter</label>
@@ -45,7 +43,6 @@ require __DIR__ . '/../../config.php';
           </form>
         </div>
       </div>
-    </div>
   </div>
   <script>
     // Modify your existing tambahResep function

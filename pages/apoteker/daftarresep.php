@@ -49,7 +49,7 @@ require __DIR__ . '/../../config.php';
         <button onclick="window.location.href='../../functions/logout.php'">Logout</button>
     </div>
   </nav>
-  <div style="display: flex; min-height: 100vh;">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
       <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>
@@ -68,8 +68,8 @@ require __DIR__ . '/../../config.php';
         <label>Harga</label><br>
         <input type="text" id="harga" class="input-grey"><br>
 
-        <button onclick="konfirmasiObat()">Simpan</button>
-        <button onclick="closeModal()">Batal</button>
+        <button class="button-add" onclick="konfirmasiObat()">Simpan</button>
+        <button class="button-hapus" onclick="closeModal()">Batal</button>
       </div>
     </div>
   </div>

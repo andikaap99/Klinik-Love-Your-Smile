@@ -44,7 +44,7 @@ require __DIR__ . '/../../config.php';
         <button onclick="window.location.href='../../functions/logout.php'">Logout</button>
     </div>
   </nav>
-  <div style="display: flex; min-height: 100vh;">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
       <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>

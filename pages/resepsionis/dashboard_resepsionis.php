@@ -21,7 +21,7 @@ require __DIR__ . '/../../config.php';
     </div>
   </nav>
 
-  <div style="display: flex; height: 100vh">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br /><small>Love Your Smile</small></h3>
       <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>
@@ -65,8 +65,8 @@ require __DIR__ . '/../../config.php';
         <label>Alamat</label><br>
         <input type="text" id="alamatPasien" class="input-grey"><br><br>
 
-        <button onclick="tambahPasien()">Simpan</button>
-        <button onclick="closePasienModal()">Batal</button>
+        <button class="button-add" onclick="tambahPasien()">Simpan</button>
+        <button class="button-hapus" onclick="closePasienModal()">Batal</button>
       </div>
     </div>
   </div>

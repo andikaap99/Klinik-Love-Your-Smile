@@ -90,6 +90,20 @@ button {
   transition: 0.3s;
 }
 
+.button-add {
+  margin: 0;
+  padding: 6px 12px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-add:hover {
+  background-color: #367339;
+}
+
 .button-hapus {
   margin: 0;
   padding: 6px 12px;
@@ -155,6 +169,7 @@ body, html {
 .sidebar {
   background: #DCE6F5;
   width: 240px;
+  min-height: 82vh;
   padding: 32px 24px;
   display: flex;
   flex-direction: column;
@@ -402,6 +417,8 @@ button,
   max-width: 600px;
   margin: 0 auto;
   margin-top: 8px;
+  max-height: 350px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -430,7 +447,7 @@ button,
   max-height: 180px;
 }
 .resep-submit-btn {
-  background: #3498db;
+  background: #43a047;
   color: #fff;
   border: none;
   border-radius: 16px;
@@ -441,8 +458,8 @@ button,
   align-self: flex-end;
   box-shadow: 0 2px 8px rgba(52,152,219,0.12);
   transition: background 0.2s;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 .resep-submit-btn:hover {
-  background: #1976d2;
+  background: #388e3c;
 }

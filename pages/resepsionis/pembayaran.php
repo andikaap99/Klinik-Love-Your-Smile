@@ -12,17 +12,17 @@ require __DIR__ . '/../../config.php';
 <body>
   <nav class="navbar">
     <div class="navbar-left">
-        <h2>Pembayaran</h2>
+        <h2>Resepsionis</h2>
     </div>
     <div class="navbar-right">
         <button onclick="window.location.href='../../functions/logout.php'">Logout</button>
     </div>
   </nav>
 
-  <div style="display: flex; height: 100vh;">
+  <div style="display: flex;">
     <div class="sidebar">
       <h3>Klinik Gigi<br><small>Love Your Smile</small></h3>
-      <div class="avatar">X</div>
+      <img src="../image/happy.png" title="smile icons" style= "width:124px"></img>
       <button onclick="window.location.href='dashboard_resepsionis.php'">Daftar Pasien</button>
       <button onclick="window.location.href='antrian.php'">Pendaftaran Antrian</button>
       <button onclick="window.location.href='perawatan.php'">Perawatan</button>
@@ -61,8 +61,8 @@ require __DIR__ . '/../../config.php';
         <select id="resepsionisSelect" class="input-grey">
           <option value="">-- Pilih Resepsionis --</option>
         </select><br>
-        <button onclick="tambahPembayaran()">Simpan</button>
-        <button onclick="closePembayaranModal()">Batal</button>
+        <button class="button-add" onclick="tambahPembayaran()">Simpan</button>
+        <button class="button-hapus" onclick="closePembayaranModal()">Batal</button>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@ function loadPembayaran() {
         <td>${pembayaran.nama_pelayanan}</td>
         <td>${pembayaran.nama_obat}</td>
         <td>Rp ${parseInt(pembayaran.harga_total).toLocaleString('id-ID')}</td>
-        <td><button onclick="hapusPembayaran(${pembayaran.id})">Hapus</button></td>
+        <td><button class="button-hapus" onclick="hapusPembayaran(${pembayaran.id})">Hapus</button></td>
       `;
       tbody.appendChild(row);
     });
